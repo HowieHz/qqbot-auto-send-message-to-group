@@ -34,9 +34,9 @@
 
 需要在脚本同目录创建 `config.json` 作为配置文件
 
-onebot_api_http_server：指的是 http 服务器 地址\
-group_id_list：指的是你要发送信息的群\
-messages：指的是从其中随机选一个消息发送\
+`onebot_api_http_server`：指的是 http 服务器 地址\
+`group_id_list`：指的是你要发送信息的群\
+`messages`：指的是从其中随机选一个消息发送\
 （注意：`"messages": [ "" ]`，将不会发出任何消息。如果设置为 `"messages": [ "打卡",  "" ]` 那将会有 50% 的概率发送打卡消息）\
 （编辑配置文件的时候请注意在 JSON 中，​尾随逗号（即在最后一个元素后添加的逗号）是不被允许的。建议在编辑完之后使用在线 JSON 检查工具检查正确性）
 
