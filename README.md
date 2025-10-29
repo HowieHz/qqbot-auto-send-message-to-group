@@ -28,7 +28,9 @@
 
 一种 onebot api 的实现软件：[NapCat | NapCatQQ | 开始安装](https://napneko.pages.dev/guide/start-install)
 
-运行脚本前请记得创建\开启 http 服务器，开启 `0.0.0.0:3000` 作为服务器地址（`http://localhost:3000` 地址是默认的地址，如果你开启的是 `0.0.0.0:3000`，那么下面示例配置文件的 `onebot_api_http_server` 这一项无需修改）
+运行脚本前请记得**创建并开启 http 服务器**，开启 `0.0.0.0:3000` 作为服务器地址（`http://localhost:3000` 地址是默认的地址，如果你开启的是 `0.0.0.0:3000`，那么下面示例配置文件的 `onebot_api_http_server` 这一项无需修改）
+
+在 NapCat 创建并开启 http 服务器的教程：[#1](https://github.com/HowieHz/qqbot-auto-send-message-to-group/issues/1)
 
 ### 填写配置文件
 
@@ -75,6 +77,10 @@
 
 1. 代码中抛弃了 `await response.text()` 的返回值，因为在 [NapCat](https://napneko.pages.dev/) 实现中，发现返回值为 `{"status":"failed","retcode":200,"data":null,"message":"Timeout: NTEvent serviceAndMethod:NodeIKernelMsgService/sendMsg ListenerName:NodeIKernelMsgListener/onMsgInfoListUpdate EventRet:\n{\n    \"result\": 0,\n    \"errMsg\": \"\"\n}\n","wording":"Timeout: NTEvent serviceAndMethod:NodeIKernelMsgService/sendMsg ListenerName:NodeIKernelMsgListener/onMsgInfoListUpdate EventRet:\n{\n    \"result\": 0,\n    \"errMsg\": \"\"\n}\n","echo":null}` 而不是类似 `{"status":"ok","retcode":0,"data":{"message_id":409173648},"message":"","wording":"","echo":null}` 但是消息依然是发送成功的，所以我选择忽略此返回值。
 2. 无法设置每日自动某时刻发送消息。此处我选择通过外部软件进行定时任务设置，如 Windows 的“任务计划程序”。
+
+## 常见问题
+
+发送消息成功实际没有发送：[#1](https://github.com/HowieHz/qqbot-auto-send-message-to-group/issues/1)
 
 ## 开发指南
 
